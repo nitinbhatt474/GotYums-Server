@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Nitin Bhatt",
   "license": "ISC",
@@ -13,7 +13,6 @@
     "crypto-js": "^4.0.0",
     "express": "^4.17.1",
     "natural": "^5.0.3",
-    "nodemon": "^2.0.7",
     "vector-object": "^1.3.0"
   }
 }
