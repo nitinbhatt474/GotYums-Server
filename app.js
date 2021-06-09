@@ -9,6 +9,10 @@ recSys.firstTimeSetUp();
 //so that express can parse JSON requests
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello!\nThis is a server for GotYums app.");
+});
+
 app.post("/", (req, res) => {
   //gets the date and time of when the request is recieved
   const date = new Date();
