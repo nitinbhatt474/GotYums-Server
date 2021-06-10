@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   //gets the date and time of when the request is recieved
   const date = new Date();
-  const {customer, food, restaurant}
+  const { customer, food, restaurant } = req.body;
 
   foodBlockchain.addNewBlock(
     new CryptoBlock(
@@ -25,7 +25,7 @@ app.post("/", (req, res) => {
       {
         customer,
         food,
-        restaurant
+        restaurant,
       }
     )
   );
