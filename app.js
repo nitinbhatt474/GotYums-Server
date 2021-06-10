@@ -16,19 +16,20 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   //gets the date and time of when the request is recieved
   const date = new Date();
-  console.log(req.body);
+  const {customer, food, restaurant}
 
   foodBlockchain.addNewBlock(
     new CryptoBlock(
       foodBlockchain.blockchain.length,
       `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`,
       {
-        customer: req.body.username,
-        quantity: 50,
+        customer,
+        food,
+        restaurant
       }
     )
   );
-  lastRecommendation = recSys.getSimilarFood(req.body.foodId);
+  lastRecommendation = recSys.getSimilarFood(food);
   res.send({ Ok: "recieved" });
 });
 
